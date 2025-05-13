@@ -20,16 +20,17 @@ struct ContentView: View {
                 }
                 .tag(0)
 
-            AddTransactionView(selectedTab: $selectedTab)
-                .environment(\.managedObjectContext, viewContext)
-                .tabItem {
-                    Label("Add", systemImage: "plus.circle")
-                }
-                .tag(1)
 
             ChartsView()
                 .tabItem {
                     Label("Charts", systemImage: "chart.bar")
+                }
+                .tag(1)
+            
+            AddTransactionView(selectedTab: $selectedTab)
+                .environment(\.managedObjectContext, viewContext)
+                .tabItem {
+                    Label("Add", systemImage: "plus.circle")
                 }
                 .tag(2)
 
